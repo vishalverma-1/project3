@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>edit page</title>
+</head>
+<body>
+    <h1><mark>USER EDIT PAGE</mark></h1>
+     <form action="" method="POST">
+        {% for x in data1 %}
+        {% csrf_token %}
+        <input type="text" name="name" value={{x.name}}><br>
+        <input type="email" name="email" value={{x.email}}><br>
+        <input type="mobile" name="mobile" value={{x.mobile}}><br>
+        <input type="submit" value="Edit">
+        {% endfor %}
+     </form>
+</body>
+</html>

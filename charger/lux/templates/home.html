@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>read page</title>
+</head>
+<body>
+    <h1><mark> READ DATA PAGE</mark></h1>
+    <table border=4>
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>EMAIL</th>
+            <th>MOBILE</th>
+            <th>DELETE</th>
+            <th>EDIT</th>
+        </tr>
+        {% for x in obj %}
+        <tr>
+            <td>{{x.id}}</td>
+            <td>{{x.name}}</td>
+            <td>{{x.email}}</td>
+            <td>{{x.mobile}}</td>
+            <td>
+                <a href="{% url 'delete' x.id %}">
+                    <b>Delete</b>
+                </a>
+            </td>
+            <td>
+                <a href="{% url 'edit' x.id %}">
+                    <b>Edit</b>
+                </a>
+            </td>     
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{% url 'create' %}">
+        <b>BACK TO REGISTRATION PAGE</b>
+    </a>
+</body>
+</html>
